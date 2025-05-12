@@ -1,10 +1,6 @@
 server <- function(input, output){
   
   
-  
-  model <- reactiveVal(luz_load("Sentimenter_goEmotions_e75.pt"))
-  dictionary <- reactiveVal(readDictionary("goEmotions_embeddings_1_e75.csv"))
-  
   ########################          Functions       ##############################
   ################################################################################
   ################################################################################
@@ -152,7 +148,7 @@ server <- function(input, output){
       ) +
       theme(
         panel.background = element_rect(fill = "#101010"),
-        plot.background = element_rect("#101010", colour = "#E69F00", size = 2),
+        plot.background = element_rect("#101010", colour = "#E69F00", linewidth = 2),
         panel.grid = element_blank(),
         panel.grid.major.y = element_line("#E69F00"),
         axis.text = element_text(color = "#FFF", size = 20),
@@ -175,5 +171,9 @@ server <- function(input, output){
     
     
   })
+  
+  
+  model <- reactiveVal(luz_load("Sentimenter_goEmotions_e75.pt"))
+  dictionary <- reactiveVal(readDictionary("goEmotions_embeddings_1_e75.csv"))
 
 }
